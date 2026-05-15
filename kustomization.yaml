@@ -4,6 +4,7 @@ namespace: batch
 resources:
   - canary.yaml
   - deployment.yaml
+  - hpa.yaml
   - service.yaml
 
 configMapGenerator:
