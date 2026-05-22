@@ -1,0 +1,9 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: batch
+  labels:
+    app.kubernetes.io/name: batch
+    app.kubernetes.io/instance: batch
+spec:
+  replicas: 1
