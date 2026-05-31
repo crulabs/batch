@@ -3,8 +3,11 @@ kind: Kustomization
 namespace: batch
 resources:
   - ../../base
-  - hpa.yaml
   - canary.yaml
+  - helmrelease_postgres.yaml
+  - hpa.yaml
+  - secret_batch-postgres.enc.yaml
+
 
 configMapGenerator:
   - name: batch-html

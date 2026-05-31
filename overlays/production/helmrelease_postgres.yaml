@@ -1,0 +1,36 @@
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: OCIRepository
+metadata:
+  name: cnpg-cluster
+  namespace: batch
+spec:
+  interval: 24h
+  url: oci://ghcr.io/crulabs/helm/cnpg-cluster
+  layerSelector:
+    mediaType: "application/vnd.cncf.helm.chart.content.v1.tar+gzip"
+    operation: copy
+  ref:
+    tag: "1.1.1"
+---
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: batch-postgres
+  namespace: batch
+spec:
+  interval: 5m
+  chartRef:
+    kind: OCIRepository
+    name: cnpg-cluster
+    namespace: batch
+  values:
+    initdb:
+      database: batch
+      secret:
+        name: batch-postgres
+
+    storage:
+      size: 2Gi
+
+    backup:
+      enabled: true
