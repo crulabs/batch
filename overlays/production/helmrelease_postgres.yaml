@@ -35,6 +35,6 @@ spec:
       size: 2Gi
 
     backup:
-      enabled: true
+      enabled: false
       obc:
         name: batch-postgres-backups

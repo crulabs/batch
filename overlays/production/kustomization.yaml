@@ -6,7 +6,7 @@ resources:
   - canary.yaml
   - helmrelease_postgres.yaml
   - hpa.yaml
-  - obc.yaml
+  #- obc.yaml
   - secret_batch-postgres.enc.yaml
 
 
