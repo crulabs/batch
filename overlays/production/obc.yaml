@@ -4,6 +4,5 @@ metadata:
   name: batch-postgres-backups
   namespace: batch
 spec:
-  bucketName: batch-postgres-backups-29f7230a-0674-4ed4-9c2a-3e2cd891078e
-  objectBucketName: obc-batch-batch-postgres-backups
+  bucketName: batch-postgres-backups
   storageClassName: rook-ceph-bucket
